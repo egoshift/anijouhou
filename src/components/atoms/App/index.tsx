@@ -1,12 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import DiscoverTemplate from 'src/components/templates/DiscoverTemplate';
+import DiscoverPage from 'src/components/organisms/DiscoverPage';
+
+import { App as AppComponent } from './App.styles'
 
 function App() {
   return (
-    <div className="App">
-      <DiscoverTemplate />
-    </div>
+    <AppComponent className="App">
+      <Router>
+        <Routes>
+          <Route path='/' element={<DiscoverPage />} />
+        </Routes>
+      </Router>
+    </AppComponent>
   );
 }
 
